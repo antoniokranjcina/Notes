@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@android:color/black"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:weightSum="100">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5" />
+
+    <RelativeLayout
+        android:id="@+id/back_arrow_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="10">
+
+        <ImageButton
+            android:id="@+id/toolbar_back_arrow"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/back_arrow_toolbar_button"
+            app:srcCompat="@drawable/ic_arrow_back" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="50" />
+
+    <RelativeLayout
+        android:id="@+id/undo_button_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="10">
+
+        <ImageButton
+            android:id="@+id/toolbar_undo_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/back_arrow_toolbar_button"
+            app:srcCompat="@drawable/ic_undo" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/redo_button_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="10">
+
+        <ImageButton
+            android:id="@+id/toolbar_redo_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/back_arrow_toolbar_button"
+            app:srcCompat="@drawable/ic_redo" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/save_button_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="10">
+
+        <ImageButton
+            android:id="@+id/toolbar_save_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/back_arrow_toolbar_button"
+            app:srcCompat="@drawable/ic_check" />
+    </RelativeLayout>
+
+</LinearLayout>

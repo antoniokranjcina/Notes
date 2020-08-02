@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Notes</string>
+    <string name="title">Title</string>
+    <string name="empty" />
+    <string name="back_arrow_toolbar_button">back arrow button</string>
+    <string name="description">Description</string>
+    <string name="search_notes">Search Notes</string>
+    <string name="all_notes">All Notes</string>
+    <string name="delete_all">Delete All</string>
+
+</resources>
