@@ -49,21 +49,31 @@
             app:srcCompat="@drawable/ic_settings" />
     </RelativeLayout>
 
-    <EditText
-        android:id="@+id/editTextToolbarSearch"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutToolbarSearch"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_height="40dp"
         android:layout_weight="90"
-        android:autofillHints=""
-        android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/ic_search"
-        android:drawablePadding="12dp"
-        android:ems="10"
-        android:hint="@string/search_notes"
-        android:inputType="textPersonName"
-        android:padding="8dp"
-        android:visibility="gone" />
+        app:endIconDrawable="@drawable/ic_close"
+        app:endIconMode="clear_text"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@drawable/custom_input"
+            android:drawableStart="@drawable/ic_search"
+            android:ems="10"
+            android:hint="@string/search_notes"
+            android:inputType="text"
+            android:padding="8dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 </LinearLayout>

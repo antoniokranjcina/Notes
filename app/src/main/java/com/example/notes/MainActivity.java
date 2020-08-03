@@ -3,9 +3,11 @@ package com.example.notes;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,6 +21,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -30,6 +33,7 @@ import com.example.notes.adapter.NoteAdapter;
 import com.example.notes.mvvm.entity.Note;
 import com.example.notes.mvvm.viewmodel.NoteViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.List;
 
@@ -37,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final int ADD_NOTE_REQUEST = 1;
     public static final int EDIT_NOTE_REQUEST = 2;
     private final NoteAdapter noteAdapter = new NoteAdapter();
+
     // UI
     private FloatingActionButton mFloatingActionButton;
     private RecyclerView mRecyclerView;
@@ -45,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText mEditTextToolbarSearch, mEditTextSearch;
     private View mViewToolbarSpace;
     private TextView mTextViewAllNotes, mTextViewNotesAmount;
+
     // vars
     private NoteViewModel mNoteViewModel;
 
@@ -69,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -177,7 +184,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mRelativeLayoutSettingsMode = findViewById(R.id.settings_button_container);
         mImageButtonBackArrow = findViewById(R.id.main_toolbar_back_button);
         mImageButtonSettings = findViewById(R.id.toolbar_settings_button);
-        mEditTextToolbarSearch = findViewById(R.id.editTextToolbarSearch);
+        TextInputLayout textInputLayoutToolbar = findViewById(R.id.textInputLayoutToolbarSearch);
+        mEditTextToolbarSearch = textInputLayoutToolbar.getEditText();
         mViewToolbarSpace = findViewById(R.id.view_toolbar_space);
         mTextViewAllNotes = findViewById(R.id.textViewAllNotes);
         mTextViewNotesAmount = findViewById(R.id.textViewNotesAmount);
@@ -245,10 +253,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTextViewNotesAmount.setText(string);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     private void threeDotsPopUpMenu() {
         PopupMenu popupMenu = new PopupMenu(this, mImageButtonSettings);
         popupMenu.setOnMenuItemClickListener(this);
         popupMenu.inflate(R.menu.menu_activity_main);
+        popupMenu.setGravity(Gravity.END);
         popupMenu.show();
     }
 }

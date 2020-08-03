@@ -113,6 +113,7 @@ public class AddEditNoteActivity extends AppCompatActivity implements View.OnCli
                 title = description.substring(0, 16);
             } else {
                 title = description;
+                mEditTextTitle.setText(title);
             }
         }
 
